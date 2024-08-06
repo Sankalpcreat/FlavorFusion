@@ -1,0 +1,163 @@
+:root {
+  --bs-font-sans-serif: 'Rubik', sans-serif;
+}
+
+.container-xxl { max-width: 1230px; }
+
+body {
+  background-image: url("/img/i-like-food.svg");
+  background-color: rgb(243,243,243);
+}
+
+a { color: var(--bs-dark); }
+
+
+/* Category Card */
+.category__link {
+  text-align: center;
+  display: block;
+  text-decoration: none;
+  transition: 250ms all;
+}
+
+.category__link:hover {
+  transform: scale(1.1);
+}
+
+.category__img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  margin-bottom: 10px;
+  box-shadow: 0px 3px 6px rgba(0,0,0,.16);
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.category__img--large {
+  height: 270px;
+}
+
+.category__img img {
+  width: 100%;
+  object-fit: cover;
+}
+/* General Layout */
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.contact-info, .map {
+  margin-bottom: 40px;
+}
+
+h1, h2 {
+  color: #333;
+  font-weight: 600;
+}
+
+p {
+  color: #555;
+}
+
+/* Contact Form */
+.contact-info form {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info .form-group {
+  margin-bottom: 15px;
+}
+
+.contact-info label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.contact-info input[type="text"],
+.contact-info input[type="email"],
+.contact-info textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.contact-info textarea {
+  resize: vertical;
+}
+
+.contact-info button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-info button:hover {
+  background-color: #0056b3;
+}
+
+/* Success and Error Messages */
+.alert {
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 4px;
+}
+
+.alert-success {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.alert-danger {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+/* Map Section */
+.map {
+  position: relative;
+}
+
+.map #map {
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+/* Add to your existing CSS file */
+.btn-custom {
+  width: 100%; /* Adjust if you want them to take the full width of their container */
+  max-width: 200px; /* Optional: Set a max-width for the buttons */
+  font-size: 1rem; /* Adjust font size */
+  padding: 10px 20px; /* Adjust padding for size consistency */
+  border-radius: 5px; /* Ensure rounded corners */
+}
+
+.btn-update {
+  background-color: #007bff; /* Blue color for update */
+  color: white; /* Text color */
+  border: none; /* Remove border */
+}
+
+.btn-delete {
+  background-color: #dc3545; /* Red color for delete */
+  color: white; /* Text color */
+  border: none; /* Remove border */
+}
+
+.btn-update:hover, .btn-delete:hover {
+  opacity: 0.8; /* Slightly transparent on hover */
+}
+

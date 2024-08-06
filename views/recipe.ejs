@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= recipe.name %> - FlavorFusion</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <% if(recipe != null) { %>
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page"><%- recipe.name %></li>
+      </ol>
+    </nav>
+
+    <div class="row">
+      <div class="col-12 col-md-4">
+        <img src="/uploads/<%- recipe.image %>" class="img-fluid sticky-top" style="top: 20px;" alt="<%- recipe.name %>" loading="lazy">
+      </div>
+
+      <div class="col-12 col-md-8">
+        <div class="row">
+          <div class="col-12"><h1><%- recipe.name %></h1></div>
+          <div class="col-12 mb-4"><i class="bi bi-tag"></i> <%- recipe.category %></div>
+          <div class="col-12" style="white-space: pre-line;">
+            <h4>Cooking Instructions</h4>
+            <%- recipe.description %>
+          </div>
+        </div>
+
+        <div class="row pt-4">
+          <div class="col-12">
+            <h4>Ingredients</h4>
+            <ul class="list-group list-group-flush">
+              <% recipe.ingredients.forEach(function(ingredient, index){ %>
+                <li class="list-group-item"><%= ingredient %></li>
+              <% }) %>
+            </ul> 
+          </div>
+        </div>
+
+        <!-- Buttons Row -->
+        <div class="row pt-4">
+          <div class="col-12 d-flex justify-content-between">
+            <!-- Update Button -->
+            <a href="/update-recipe/<%= recipe._id %>" class="btn btn-custom btn-update">Update Recipe</a>
+            
+            <!-- Delete Button -->
+            <button class="btn btn-custom btn-delete" onclick="deleteRecipe('<%= recipe._id %>')">Delete Recipe</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% } else { %>
+    <p>No item found.</p>
+  <% } %>
+
+  <script>
+    async function deleteRecipe(id) {
+      try {
+        const response = await fetch(`/delete-recipe/${id}`, {
+          method: 'DELETE'
+        });
+        const data = await response.json();
+        if (data.success) {
+          window.location.href = '/';
+        } else {
+          alert(data.message);
+        }
+      } catch (error) {
+        console.error('Error:', error);
+        alert('An error occurred while deleting the recipe.');
+      }
+    }
+  </script>
+</body>
+</html>
