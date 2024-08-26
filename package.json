@@ -2,15 +2,13 @@
   "name": "cookingblog",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon app.js",
-    "dev": "nodemon app.js"
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "build": "echo 'No build step required"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
     "connect-flash": "^0.1.1",
     "cookie-parser": "^1.4.5",
@@ -22,10 +20,12 @@
     "express-session": "^1.17.2",
     "method-override": "^3.0.0",
     "mongodb": "^4.1.2",
-    "mongoose": "^6.4.6",
-    "node": "^20.16.0"
+    "mongoose": "^6.4.6"
   },
   "devDependencies": {
     "nodemon": "^2.0.13"
+  },
+  "engines": {
+    "node": "20.x"
   }
 }
